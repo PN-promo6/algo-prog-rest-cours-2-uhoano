@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../services/data-service/data.service";
-import { ActivatedRoute } from "@angular/router";
+
 import { User } from "../models/user/user";
+import { Post } from "../models/post/post";
 
 @Component({
   selector: "app-users-list",
@@ -10,7 +11,7 @@ import { User } from "../models/user/user";
 })
 export class UsersListComponent implements OnInit {
   users: User[];
-
+  posts: Post[];
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -27,6 +28,16 @@ export class UsersListComponent implements OnInit {
     this.dataService.fetchUserById("5eaecda0cba960e77fc9f205").subscribe(
       (res) => {
         console.log(res);
+      },
+      (error) => {
+        "Error Try Again";
+      }
+    );
+
+    this.dataService.fetchPosts().subscribe(
+      (res) => {
+        // console.log(res);
+        this.posts = res;
       },
       (error) => {
         "Error Try Again";

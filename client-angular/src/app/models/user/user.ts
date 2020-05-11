@@ -8,4 +8,7 @@ export class User {
   phone: string;
   latitude: number;
   longitude: number;
+  post: string;
+  comment: string;
+  photo: string;
 }
