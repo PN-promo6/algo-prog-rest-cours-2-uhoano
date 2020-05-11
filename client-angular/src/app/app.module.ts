@@ -7,9 +7,11 @@ import { AppComponent } from "./app.component";
 import { UsersListComponent } from "./users-list/users-list.component";
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { UserPreviewComponent } from './user-preview/user-preview.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { PostPreviewComponent } from './post-preview/post-preview.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersListComponent, PostsListComponent, UserPreviewComponent],
+  declarations: [AppComponent, UsersListComponent, PostsListComponent, UserPreviewComponent, NavBarComponent, PostPreviewComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

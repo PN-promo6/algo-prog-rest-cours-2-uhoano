@@ -11,7 +11,6 @@ import { Post } from "../models/post/post";
 })
 export class UsersListComponent implements OnInit {
   users: User[];
-  posts: Post[];
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
@@ -28,16 +27,6 @@ export class UsersListComponent implements OnInit {
     this.dataService.fetchUserById("5eaecda0cba960e77fc9f205").subscribe(
       (res) => {
         console.log(res);
-      },
-      (error) => {
-        "Error Try Again";
-      }
-    );
-
-    this.dataService.fetchPosts().subscribe(
-      (res) => {
-        // console.log(res);
-        this.posts = res;
       },
       (error) => {
         "Error Try Again";

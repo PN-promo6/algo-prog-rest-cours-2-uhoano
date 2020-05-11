@@ -1,7 +1,7 @@
-<div class="card mb-2">
+<div class="container">
+  <div class="row">
+    <app-post-preview class="col-3" *ngFor="let post of posts" [post]="post"></app-post-preview>
 
-  <div class="card-body">
-    <h5 class="card-title"> {{post.date}} {{post.title}}</h5>
-    <p class="card-text">{{post.text}}</p>
   </div>
+
 </div>

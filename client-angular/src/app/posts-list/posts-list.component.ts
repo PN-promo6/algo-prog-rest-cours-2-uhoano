@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 
 import { Post } from "../models/post/post";
+import { DataService } from "../services/data-service/data.service";
 
 @Component({
   selector: "app-posts-list",
@@ -8,9 +9,19 @@ import { Post } from "../models/post/post";
   styleUrls: ["./posts-list.component.css"],
 })
 export class PostsListComponent implements OnInit {
-  @Input() post: Post;
+  posts: Post[];
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.fetchPosts().subscribe(
+      (res) => {
+        // console.log(res);
+        this.posts = res;
+      },
+      (error) => {
+        "Error Try Again";
+      }
+    );
+  }
 }
